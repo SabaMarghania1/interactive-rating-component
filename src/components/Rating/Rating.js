@@ -1,8 +1,14 @@
 import "./Rating.css";
 import starImg from "../../images/icon-star.svg";
 
-function Rating({select, setSelect, isSelected, setIsSelected}) {
+function Rating({select, setSelect, setIsSelected}) {
   const arr = [1, 2, 3, 4, 5];
+
+  function handleSubmit() {
+    if (select > 0) {
+      setIsSelected(true);
+    }
+  }
 
   return (
     <div className="rating__container">
@@ -22,13 +28,16 @@ function Rating({select, setSelect, isSelected, setIsSelected}) {
             <li
               className={select === number ? "active numbers__item" : "numbers__item"}
               onClick={() => setSelect(select === number ? 0 : number)}
+              key={number}
             >
               {number}
             </li>
           );
         })}
       </ul>
-      <button className="btn">Submit</button>
+      <button className="btn" onClick={handleSubmit}>
+        Submit
+      </button>
     </div>
   );
 }

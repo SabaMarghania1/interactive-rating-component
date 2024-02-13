@@ -17,8 +17,9 @@
   border-radius: 50%;
 }
 
-.text__content {
+.rating__container .text__content {
   margin: 16px auto 23px;
+  text-align: start;
 }
 
 .title {
@@ -46,7 +47,7 @@
 .numbers__item {
   background-color: #262e38;
   border-radius: 50%;
-
+  cursor: pointer;
   width: 42px;
   height: 42px;
   display: flex;
