@@ -1,7 +1,7 @@
 import "./Rating.css";
 import starImg from "../../images/icon-star.svg";
 
-function Rating({select, setSelect}) {
+function Rating({select, setSelect, isSelected, setIsSelected}) {
   const arr = [1, 2, 3, 4, 5];
 
   return (
@@ -21,7 +21,7 @@ function Rating({select, setSelect}) {
           return (
             <li
               className={select === number ? "active numbers__item" : "numbers__item"}
-              onClick={() => setSelect(number)}
+              onClick={() => setSelect(select === number ? 0 : number)}
             >
               {number}
             </li>
