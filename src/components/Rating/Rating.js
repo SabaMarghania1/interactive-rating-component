@@ -1,10 +1,8 @@
 import "./Rating.css";
 import starImg from "../../images/icon-star.svg";
-import {useState} from "react";
 
-function Rating() {
+function Rating({select, setSelect}) {
   const arr = [1, 2, 3, 4, 5];
-  const [select, setSelect] = useState(-1);
 
   return (
     <div className="rating__container">
@@ -19,11 +17,11 @@ function Rating() {
         </p>
       </div>
       <ul className="numbers">
-        {arr.map((number, index) => {
+        {arr.map(number => {
           return (
             <li
-              className={select === index ? "active numbers__item" : "numbers__item"}
-              onClick={() => setSelect(index)}
+              className={select === number ? "active numbers__item" : "numbers__item"}
+              onClick={() => setSelect(number)}
             >
               {number}
             </li>
